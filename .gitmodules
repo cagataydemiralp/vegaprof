@@ -1,0 +1,6 @@
+[submodule "vega"]
+	path = vega
+	url = git@github.com:JunranY/vega.git
+[submodule "editor"]
+	path = editor
+	url = git@github.com:JunranY/editor.git

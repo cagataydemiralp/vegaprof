@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [16]
+
+    name: Node ${{ matrix.node }}
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Ensure apt-get is updated
+        run: sudo apt-get update
+
+      - name: Install Canvas and XML dependencies and pangocairo
+        run: sudo apt-get install -y libxml2-utils
+
+      - name: Setup Node ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Build vega
+        run: cd vega && yarn --frozen-lockfile && yarn build
+
+      - name: Build the editor
+        run: cd editor && yarn --frozen-lockfile && yarn build
