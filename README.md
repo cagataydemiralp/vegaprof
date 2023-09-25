@@ -72,17 +72,17 @@ To support this, our implementation additionally tracks compile paths to resolve
 <br />
 <br />
 
-As can be seen in Fig. 3, we augmented the Vega Editor with a performance tab to provide a performance profiler for Vega visualizations. To associate the declarative specification with its compilation and execution, we provide the folowing UI components and features:
+As shown in Fig. 3, we augmented the Vega Editor with a performance tab to provide a performance profiler for Vega visualizations. To associate the declarative specification with its compilation and execution, we provide the following UI components and features:
 
 - **editor view**:
   - _hovering/selecting_ a specification block
 - **performance tab**:
-  - **flame chart**: consists of stacks of rectangles, representing specification blocks and dataflow nodes
-    - _hovering_ over a rectangle, to see the block ancestry and runtime
+  - **flame chart**: consists of stacks of rectangles representing specification blocks and dataflow nodes
+    - _hovering_ over a rectangle to see the block ancestry and runtime
     - _clicking_ on a rectangle to zoom in
   - **dataflow graph**:
     - _zooming_
-    - _hovering_ over a node, to see the parameters and generated values
+    - _hovering_ over a node to see the parameters and generated values
     - _filtering_, by type or by the node execution time with the slider
   - **pulse table**:
     - _selecting_ a pulse to filter the nodes and see the corresponding flame chart
@@ -118,11 +118,11 @@ The local web server will be accessible from [http://localhost:8080](http://loca
 
 ## Citing VegaProf
 
-If you find this work or code useful please consider citing us:
+If you find this work or code useful, please consider citing us:
 
-    @article{yang2022vegaprof,
+    @inproceedings{yang2023vegaprof,
       title={VegaProf: Profiling Vega Visualizations},
       author={Yang, Junran and B{\"a}uerle, Alex and Moritz, Dominik and Demiralp, {\c{C}}a{\u{g}}atay},
-      journal={arXiv preprint arXiv:2212.13670},
-      year={2022}
+      booktitle={ACM User Interface Software \& Technology (UIST)},
+      year={2023}
     }
